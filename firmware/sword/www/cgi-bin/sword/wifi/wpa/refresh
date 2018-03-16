@@ -1,0 +1,6 @@
+#!/bin/bash
+cat <<EOT
+<h2>WPA Survey Started</h2>
+<pre>
+EOT
+tail -f /www/SWORD/logs/wpa.txt

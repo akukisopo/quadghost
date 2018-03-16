@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo Content-type: text/html
+echo ""
+
+if [[ "$QUERY_STRING" =~ "cmd" ]]
+then
+if [[ "$QUERY_STRING" =~ "&cmd" ]]
+then
+echo "Sh1t detected. Quitting"
+exit 1
+fi
+
+
+ip=`echo "$QUERY_STRING"|cut -d "&" -f1|cut -d "=" -f2`
+
+
+
+acleanip=`echo $ip | echo -e $(sed 's/+/ /g; s/%3A/\\:/g')`
+
+#echo  $acleanip
+
+
+
+cleanip=`echo $acleanip | echo -e $(sed 's/+/ /g; s/%/\\x/g')`
+
+#cleanip=${ip//[^a-zA-Z0-9.]/}
+#cleanip=`echo -n $cleanip | tr A-Z a-z`
+
+echo "<h3>Nmap Port Scan for Target : $cleanip</h3>"
+printf "<pre>\n"
+#echo "$cleanip"
+printf "</pre>\n"
+echo "<pre>"
+nmap -F $acleanip -v 
+
+#ping -c 4 "$cleanip" 2>&1|sed 's/$/<br>/g'
+echo "<p>"
+echo "<B>Scan Complete</B>"
+echo "</p>"
+fi
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Content-type: text/html"
+echo ""
+echo "<html><head><title>Connection to the Server Stopped.</title></head>"
+echo "<body>"
+echo "<h2>Connection to the Server Stopped.</h2>"
+killall -9 ash
+killall -9 nc
+#ifconfig wlan0 up
+echo "<pre>"
+#echo "$(cat /www/SWORD/logs/reaver/reaver.txt)"
+echo "</pre>"
+#cat /www/SWORD/logs/reaver/reaver321.txt
+echo "</body>"
+echo "</html>"
