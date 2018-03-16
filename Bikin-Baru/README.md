@@ -1,0 +1,1 @@
+Bikin dari awal tahap demi tahap

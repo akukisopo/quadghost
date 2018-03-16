@@ -1,0 +1,1 @@
+Bikin Ulang dari yang sudah ada disebabkan karena rusak
