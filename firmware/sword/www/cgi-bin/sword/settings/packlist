@@ -1,8 +1,0 @@
-#!/bin/bash
-echo Content-type: text/html
-echo ""
-echo "<h2>Listing Installed Packages</h2>"
-cd /www/cgi-bin/sword/settings/
-opkg list-installed > output.txt
-echo "<pre>$(cat output.txt)</pre>"
-

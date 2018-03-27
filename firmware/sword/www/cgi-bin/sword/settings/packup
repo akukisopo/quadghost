@@ -1,8 +1,0 @@
-#!/bin/bash
-echo Content-type: text/html
-echo ""
-echo "<h2>Updating Package Manger</h2>"
-cd /www/cgi-bin/sword/settings/
-opkg update > output.txt
-echo "<pre>$(cat output.txt)</pre>"
-
